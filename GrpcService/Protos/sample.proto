@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package greet;
+
+service Sample {
+  rpc SampleCall (SampleRequest) returns (SampleResponse);
+}
+
+message SampleRequest {
+  string name = 1;
+}
+
+message SampleResponse {
+  string message = 1;
+  repeated string items = 2;
+}
